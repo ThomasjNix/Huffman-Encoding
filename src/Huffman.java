@@ -9,14 +9,16 @@ public class Huffman {
 	public void findFreq(String inLine){
 		System.out.println(inLine);
 		int indexCounter=0;
-		
 		for (int i = 0; i < inLine.length(); i++){
+		
 			String currentChar=String.valueOf(inLine.charAt(indexCounter));
-			if (!dictionary.keySet().contains(currentChar)){
-				dictionary.put(currentChar, 1);
-			}else{
-				dictionary.replace(currentChar, dictionary.get(currentChar)+1);
-			}
+			
+				if (!dictionary.keySet().contains(currentChar)){
+					dictionary.put(currentChar, 1);
+				}else{
+					dictionary.replace(currentChar, dictionary.get(currentChar)+1);
+				}
+			
 			indexCounter++;
 		}
 	}

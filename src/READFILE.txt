@@ -1,3 +1,5 @@
-abcdefghijklmnopqrstuvwxyz
-dog
-cat
+This is a test file for use in practice of the Huffman Encoding assignment for ITCS2215
+This test will read multiple lines
+Eventually the huffman encoding algorithm
+will be able to encode each letter
+by frequency of appearing in the file
