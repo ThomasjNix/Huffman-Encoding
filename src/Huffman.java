@@ -110,56 +110,7 @@ public class Huffman {
 		for (Node finalNodes:xremainingNodes.keySet()){
 			System.out.println("\nCompleted:\n===============\nWeight of tree(root node): " + finalNodes.nodeFreq);
 		}
-		
-		/*
-		 * This was an attempt at using linked lists rather than a hashmap
-		 * 
-		while (remainingNodes.size()!=1){
-			int min1=Integer.MAX_VALUE;
-			int min2=Integer.MAX_VALUE;
-			Node leftNodePostRemoval = null;
-			Node rightNodePostRemoval = null;
-			
-			for (int i = 0; i < 2; i++){
-				Node toBeRemoved=null;
-				System.out.println("\n"+"Iteration:"+i);
-				if(i == 0){
-					ListIterator<Node> listIterator = remainingNodes.listIterator();
-					while(listIterator.hasNext()){
-						if (listIterator.next().nodeFreq<min1){
-							Node tempNextNode=listIterator.previous();
-							min1=tempNextNode.nodeFreq;
-							toBeRemoved=tempNextNode;
-							leftNodePostRemoval=tempNextNode;
-						}
-					}
-					listIterator.remove();
-				}
-				if (i==1){
-					ListIterator<Node> listIterator = remainingNodes.listIterator();
-					System.out.println("Iteration2 running");
-					while(listIterator.hasNext()){
-						if (listIterator.next().nodeFreq<min2){
-							Node tempNextNode=listIterator.previous();
-							min2=tempNextNode.nodeFreq;
-							toBeRemoved=tempNextNode;
-							rightNodePostRemoval=tempNextNode;
-						}
-					}
-					listIterator.remove();
-				}
-				
-				System.out.println("Removing: "+toBeRemoved.nodeLetter + " weight: "+toBeRemoved.nodeFreq);
-				
-				
-			}
-			System.out.println("\nAdding node:\nLeft node: "+leftNodePostRemoval.nodeLetter+" Right node: "+
-			rightNodePostRemoval.nodeLetter+"\nNew node weight: "+(min1+min2)+"\n");
-			remainingNodes.add(new Node(leftNodePostRemoval, rightNodePostRemoval, "", min1+min2));
-		}
-		
-		System.out.println(remainingNodes.get(0).nodeFreq);
-		*/
+	
 	}
 	
 	/*
@@ -181,7 +132,7 @@ public class Huffman {
 			HuffmanEncoding(startingNode.toRightNode, encoding.concat("1"));
 		}
 		else if(startingNode.toLeftNode!=null && startingNode.toRightNode==null){
-			HuffmanEncoding(startingNode.toRightNode, encoding.concat("0"));
+			HuffmanEncoding(startingNode.toLeftNode, encoding.concat("0"));
 		}
 		else{
 			System.out.println("Encoding complete for letter "+startingNode.nodeLetter);
